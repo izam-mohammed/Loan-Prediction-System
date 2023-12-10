@@ -27,3 +27,6 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
 )
+
+with open("verison.txt", "w") as f:
+    f.write(__version__)

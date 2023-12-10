@@ -40,7 +40,6 @@ list_of_files = [
     "README.md",
     "CONTRIBUTING.md",
     ".gitignore",
-    "version.txt",
 ]
 
 for filepath in list_of_files:
