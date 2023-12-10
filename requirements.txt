@@ -7,6 +7,4 @@ xgboost
 Flask
 joblib
 python-box
-
-
 -e .
