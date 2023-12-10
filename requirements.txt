@@ -1,0 +1,12 @@
+scikit-learn
+numpy
+pandas
+matplotlib
+seaborn
+xgboost
+Flask
+joblib
+python-box
+
+
+-e .

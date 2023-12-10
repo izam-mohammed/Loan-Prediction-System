@@ -1,0 +1,32 @@
+# Virtual Environment
+venv/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Model files
+*.model
+*.h5
+
+# Compiled Python files
+__pycache__/
+
+# Distribution/installation
+dist/
+build/
+
+# Python egg metadata
+*.egg-info/
+
+# Logs
+*.log
+
+# Ignore any saved models or checkpoints
+model_checkpoints/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# artifacts
+artifacts/
