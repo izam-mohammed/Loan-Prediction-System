@@ -9,6 +9,7 @@ class DataIngestionConfig:
     local_data_file: Path
     unzip_dir: Path
 
+
 @dataclass(frozen=True)
 class DataValidationConfig:
     root_dir: Path
@@ -19,6 +20,7 @@ class DataValidationConfig:
     nan_ratio: float
     categories: dict
 
+
 @dataclass(frozen=True)
 class DataTransformationConfig:
     root_dir: Path
@@ -27,6 +29,7 @@ class DataTransformationConfig:
     test_size: float
     all_cols: list
 
+
 @dataclass(frozen=True)
 class ModelTrainerConfig:
     root_dir: Path
@@ -34,6 +37,7 @@ class ModelTrainerConfig:
     test_data_path: Path
     model_name: str
     params: dict
+
 
 @dataclass(frozen=True)
 class ModelEvaluationConfig:

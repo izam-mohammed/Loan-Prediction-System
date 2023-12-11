@@ -124,7 +124,7 @@ def get_size(path: Path) -> str:
 
 def is_nan(value):
     """Check if a value is NaN.
-    
+
     Args:
         values (Any): Any values
 
@@ -135,17 +135,18 @@ def is_nan(value):
 
 
 @ensure_annotations
-def save_txt(data, path:Path):
+def save_txt(data, path: Path):
     """save text file
 
     Args:
         data (Any): data to be saved as text
         path (Path): path to text file
     """
-    with open (path, "w") as f:
+    with open(path, "w") as f:
         f.write(data)
 
     logger.info(f"txt file saved at: {path}")
+
 
 def round_batch(*vars):
     """
