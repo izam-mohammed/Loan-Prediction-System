@@ -8,7 +8,7 @@ from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
-import csv
+import numpy as np
 
 
 @ensure_annotations
@@ -146,7 +146,19 @@ def load_joblib(path: Path):
     Returns:
         Any: object stored in the file
     """
-    joblib.load(filename=path)
+    data = joblib.load(filename=path)
     
     logger.info(f"joblib file loaded from: {path}")
     return data
+
+
+def is_nan(value):
+    """Check if a value is NaN.
+    
+    Args:
+        values (Any): Any values
+
+    Returns:
+        Bool: type of the value is na
+    """
+    return isinstance(value, float) and np.isnan(value)

@@ -1,1 +1,43 @@
-key: val
+COLUMNS:
+  Gender: Object 
+  Married: Object 
+  Education: Object 
+  Self_Employed: Object 
+  ApplicantIncome: int64  
+  CoapplicantIncome: float64
+  LoanAmount: float64
+  Loan_Amount_Term: float64
+  Credit_History: float64
+  Property_Area: Object 
+  Loan_Status: Object
+
+TARGET_COLUMN:
+  name: Loan_Status
+
+COL_NAN_RATIO: 0.1
+
+CATEGORIES:
+  Gender: 
+    - Male
+    - Female
+  Married: 
+    - "No"
+    - "Yes"
+  Dependents: 
+    - "0"
+    - "1"
+    - "2"
+    - "3+"
+  Education: 
+    - Graduate
+    - Not Graduate
+  Self_Employed: 
+    - "No"
+    - "Yes"
+  Property_Area: 
+    - Urban
+    - Rural
+    - Semiurban
+  Loan_Status: 
+    - "Y"
+    - "N"
