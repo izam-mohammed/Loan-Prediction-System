@@ -100,8 +100,8 @@ class ConfigurationManager:
             root_dir=config.root_dir,
             test_data_path=config.test_data_path,
             model_path = config.model_path,
-            metric_file_name = config.metric_file_name,
             target_column = schema.name,
+            models_dir = config.models_dir,
            
         )
 
