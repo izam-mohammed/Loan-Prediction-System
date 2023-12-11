@@ -26,3 +26,11 @@ class DataTransformationConfig:
     encoder_name: str
     test_size: float
     all_cols: list
+
+@dataclass(frozen=True)
+class ModelTrainerConfig:
+    root_dir: Path
+    train_data_path: Path
+    test_data_path: Path
+    model_name: str
+    params: dict
