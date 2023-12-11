@@ -46,3 +46,11 @@ class ModelEvaluationConfig:
     model_path: Path
     target_column: str
     models_dir: str
+
+@dataclass(frozen=True)
+class PredictionConfig:
+    root_dir: str
+    model_path: str
+    vectorizer_path: str
+    data_path: str
+    prediction_file: str

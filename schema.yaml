@@ -23,11 +23,6 @@ CATEGORIES:
   Married: 
     - "No"
     - "Yes"
-  Dependents: 
-    - "0"
-    - "1"
-    - "2"
-    - "3+"
   Education: 
     - Graduate
     - Not Graduate

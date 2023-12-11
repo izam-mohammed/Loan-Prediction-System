@@ -50,10 +50,11 @@ class DataTransformation:
             "Education",
             "Self_Employed",
             "Property_Area",
-            "Loan_Status",
         ]
         encoder = OrdinalEncoder()
         data[object_cols] = encoder.fit_transform(data[object_cols])
+        data["Loan_Status"] = data["Loan_Status"].apply(lambda x:1 if x == "Y" else 0)
+        
         save_bin(
             data=encoder,
             path=Path(os.path.join(self.config.root_dir, self.config.encoder_name)),
