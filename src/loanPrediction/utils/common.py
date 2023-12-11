@@ -94,7 +94,7 @@ def save_bin(data, path: Path):
 
 
 @ensure_annotations
-def load_bin(path: Path) -> Any:
+def load_bin(path: Path):
     """load binary data
 
     Args:
@@ -146,3 +146,18 @@ def save_txt(data, path:Path):
         f.write(data)
 
     logger.info(f"txt file saved at: {path}")
+
+def round_batch(*vars):
+    """
+    Round a batch of values individually
+
+    Args:
+        Any
+
+    Returns:
+        tuple: contain all values in batch
+    """
+    res = []
+    for i in vars:
+        res.append(round(i, 3))
+    return tuple(res)
