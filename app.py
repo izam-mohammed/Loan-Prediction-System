@@ -36,7 +36,7 @@ def pred():
         credit_history = request.args.get("credit_history")
         property_area = request.args.get("property_area")
 
-        logger.info("X" + "==" * 16 + "Predicting" + "==" * 16 + "X")
+        logger.info("\n\nX" + "==" * 16 + "Predicting" + "==" * 16 + "X")
 
         config = ConfigurationManager()
         config = config.get_prediction_config()
@@ -63,7 +63,7 @@ def pred():
 
         file = load_json(path=Path(config.prediction_file))
         predict = file["prediction"]
-        logger.info("X" + "==" * 38 + "X")
+        logger.info("\nX" + "==" * 38 + "X\n")
 
         return jsonify({"result": bool(predict)})
 
