@@ -47,6 +47,7 @@ class ModelEvaluationConfig:
     target_column: str
     models_dir: str
 
+
 @dataclass(frozen=True)
 class PredictionConfig:
     root_dir: str

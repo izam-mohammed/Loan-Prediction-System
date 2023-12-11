@@ -104,19 +104,18 @@ class ConfigurationManager:
         )
 
         return model_evaluation_config
-    
+
     def get_prediction_config(self) -> PredictionConfig:
         config = self.config.prediction
 
         create_directories([config.root_dir])
 
         prediction_config = PredictionConfig(
-            root_dir = config.root_dir,
-            model_path= config.model_path,
+            root_dir=config.root_dir,
+            model_path=config.model_path,
             vectorizer_path=config.vectorizer_path,
             data_path=config.data_path,
             prediction_file=config.prediction_file,
-           
         )
 
         return prediction_config

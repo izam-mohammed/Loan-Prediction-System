@@ -5,10 +5,23 @@ from loanPrediction.utils.common import load_json
 import pandas as pd
 from pathlib import Path
 from loanPrediction import logger
+import os
 
 app = Flask(__name__)
 
-# api call
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+    return "Use API call to /predict_data"
+
+
+@app.route("/train", methods=["GET", "POST"])
+def training():
+    os.system("python main.py")
+    return "Training Successful!"
+
+
+# API call
 @app.route("/predict_data", methods=["POST", "GET"])
 def pred():
     try:
@@ -23,24 +36,26 @@ def pred():
         credit_history = request.args.get("credit_history")
         property_area = request.args.get("property_area")
 
-        logger.info("X"+"=="*16+"Predicting"+"=="*16+"X")
+        logger.info("X" + "==" * 16 + "Predicting" + "==" * 16 + "X")
 
         config = ConfigurationManager()
         config = config.get_prediction_config()
         data_path = config.data_path
 
-        data = pd.DataFrame({
-                "Gender": [gender], 
+        data = pd.DataFrame(
+            {
+                "Gender": [gender],
                 "Married": [married],
-                "Education": [education], 
-                "Self_Employed": [self_employed], 
+                "Education": [education],
+                "Self_Employed": [self_employed],
                 "ApplicantIncome": [applicant_income],
                 "CoapplicantIncome": [coapplicant_income],
                 "LoanAmount": [loan_amount],
                 "Loan_Amount_Term": [loan_amount_term],
                 "Credit_History": [credit_history],
                 "Property_Area": [property_area],
-        })
+            }
+        )
         data.to_csv(data_path, index=False)
 
         obj = PredictionPipeline()
@@ -48,7 +63,7 @@ def pred():
 
         file = load_json(path=Path(config.prediction_file))
         predict = file["prediction"]
-        logger.info("X"+"=="*38+"X")
+        logger.info("X" + "==" * 38 + "X")
 
         return jsonify({"result": bool(predict)})
 
