@@ -2,7 +2,7 @@ import os
 import urllib.request as request
 import zipfile
 from loanPrediction import logger
-from loanPrediction.utils.common import get_size
+from loanPrediction.utils.common import get_size, save_txt
 from pathlib import Path
 from loanPrediction.entity.config_entity import DataIngestionConfig
 
@@ -18,7 +18,8 @@ class DataIngestion:
                 url = self.config.source_URL,
                 filename = self.config.local_data_file
             )
-            logger.info(f"{filename} download! with following info: \n{headers}")
+            logger.info(f"{filename} download!")
+            save_txt(data=str(headers), path=Path(os.path.join(self.config.root_dir, "download_status.txt")))
         else:
             logger.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")
 

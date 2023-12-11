@@ -122,36 +122,6 @@ def get_size(path: Path) -> str:
     return f"~ {size_in_kb} KB"
 
 
-@ensure_annotations
-def save_joblib(path: Path, data):
-    """save joblib file
-
-    Args:
-        data (Any): data to be saved as binary
-        path (Path): path to joblib file
-    """
-    
-    joblib.dump(value=data, filename=path)
-
-    logger.info(f"joblib file saved at: {path}")
-
-
-@ensure_annotations
-def load_joblib(path: Path):
-    """load joblib data
-
-    Args:
-        path (Path): path to joblib file
-
-    Returns:
-        Any: object stored in the file
-    """
-    data = joblib.load(filename=path)
-    
-    logger.info(f"joblib file loaded from: {path}")
-    return data
-
-
 def is_nan(value):
     """Check if a value is NaN.
     
@@ -162,3 +132,17 @@ def is_nan(value):
         Bool: type of the value is na
     """
     return isinstance(value, float) and np.isnan(value)
+
+
+@ensure_annotations
+def save_txt(data, path:Path):
+    """save text file
+
+    Args:
+        data (Any): data to be saved as text
+        path (Path): path to text file
+    """
+    with open (path, "w") as f:
+        f.write(data)
+
+    logger.info(f"txt file saved at: {path}")
