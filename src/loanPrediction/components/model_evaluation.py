@@ -1,5 +1,11 @@
 import os
 import pandas as pd
+from loanPrediction import logger
+import matplotlib.pyplot as plt
+import seaborn as sns
+from loanPrediction.entity.config_entity import ModelEvaluationConfig
+from pathlib import Path
+from sklearn.metrics import confusion_matrix
 from sklearn.metrics import (
     accuracy_score,
     precision_score,
@@ -9,18 +15,12 @@ from sklearn.metrics import (
     roc_curve,
     auc,
 )
-from sklearn.metrics import confusion_matrix
 from loanPrediction.utils.common import (
     load_bin,
     save_json,
     round_batch,
     create_directories,
 )
-from loanPrediction import logger
-import matplotlib.pyplot as plt
-import seaborn as sns
-from loanPrediction.entity.config_entity import ModelEvaluationConfig
-from pathlib import Path
 
 
 class ModelEvaluation:

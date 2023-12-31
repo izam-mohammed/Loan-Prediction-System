@@ -1,4 +1,5 @@
 from loanPrediction import logger
+
 from loanPrediction.pipeline.stage_01_data_ingestion import (
     DataIngestionTrainingPipeline,
 )
@@ -8,7 +9,9 @@ from loanPrediction.pipeline.stage_02_data_validation import (
 from loanPrediction.pipeline.stage_03_data_transformation import (
     DataTransformationTrainingPipeline,
 )
-from loanPrediction.pipeline.stage_04_model_training import ModelTrainerTrainingPipeline
+from loanPrediction.pipeline.stage_04_model_training import (
+    ModelTrainerTrainingPipeline,
+)
 from loanPrediction.pipeline.stage_05_model_evaluation import (
     ModelEvaluationTrainingPipeline,
 )
@@ -37,8 +40,8 @@ def run_pipeline(stage_name, pipeline_instance):
 
 
 if __name__ == "__main__":
-    run_pipeline("Data Ingestion", DataIngestionTrainingPipeline())
-    run_pipeline("Data Validation", DataValidationTrainingPipeline())
-    run_pipeline("Data Tranformation", DataTransformationTrainingPipeline())
-    run_pipeline("Model Training", ModelTrainerTrainingPipeline())
-    run_pipeline("Model Evaluation", ModelEvaluationTrainingPipeline())
+    run_pipeline("Data Ingestion Pipeline", DataIngestionTrainingPipeline())
+    run_pipeline("Data Validation Pipeline", DataValidationTrainingPipeline())
+    run_pipeline("Data Tranformation Pipeline", DataTransformationTrainingPipeline())
+    run_pipeline("Model Training Pipeline", ModelTrainerTrainingPipeline())
+    run_pipeline("Model Evaluation Pipeline", ModelEvaluationTrainingPipeline())

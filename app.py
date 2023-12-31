@@ -7,8 +7,8 @@ from pathlib import Path
 from loanPrediction import logger
 import os
 
-app = Flask(__name__)
 
+app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def index():

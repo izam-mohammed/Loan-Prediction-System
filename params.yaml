@@ -11,6 +11,7 @@ Decision_Tree:
     - 0.005
     - 0.0075
     - 0.01
+    - 0.02
   - min_samples_split:
     - 2
     - 3
@@ -43,6 +44,7 @@ Decision_Tree:
     - 40
     - 45
     - 50
+    - 55
     - null
   - max_depth:
     - null
